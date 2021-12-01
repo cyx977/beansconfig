@@ -1,0 +1,15 @@
+package com.spring.test;
+
+public class MyApp {
+
+	public static void main(String[] args) {
+		Coach theCoach = new BaseballCoach();
+		Coach theSexyCoach = new TrackCoach();
+		System.out.println(theCoach.getDailyWorkout());
+	}
+	
+	public void getExercise(Coach c) {
+		System.out.println(c.getDailyWorkout());
+	}
+
+}
