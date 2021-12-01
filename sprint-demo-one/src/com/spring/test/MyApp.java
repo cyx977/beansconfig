@@ -13,6 +13,6 @@ public class MyApp {
 	public static void getExercise(Coach c) {
 		System.out.println(c.getDailyWorkout());
 		System.out.println(TrackCoach.class);
-		System.out.println(BaseballCoach.class);
+		System.out.println(MyLogger.class);
 	}
 }

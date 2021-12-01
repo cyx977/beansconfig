@@ -1,0 +1,7 @@
+package com.spring.test;
+import java.util.logging.Logger;
+
+public class MyLogger {
+	private final static Logger LOGGER = Logger.getLogger(MyLogger.class.getName());
+	LOGGER.setLevel(Level.INFO);
+}

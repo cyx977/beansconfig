@@ -17,7 +17,18 @@
     	id="baseballCoach"
     	class="com.spring.test.BaseballCoach">
     </bean>
+    <bean 
+	    id="logger" 
+	    class="com.spring.test.MyLogger">
+    </bean>
+    <bean id="myLoggerConfigs" class="com.spring.test.MyLogger" init-method="initLogger">
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+    <bean class = "com.spring.test.TesterBean" init-method="initBean"></bean>
 </beans>
+	
+    <!-- Define your beans here -->
 
 
 
