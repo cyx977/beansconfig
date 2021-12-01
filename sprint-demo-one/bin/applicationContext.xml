@@ -25,7 +25,11 @@
     	<property name="rootLoggerLevel" value="FINE" />
     	<property name="printedLoggerLevel" value="FINE"/>
     </bean>
-    <bean class = "com.spring.test.TesterBean" init-method="initBean"></bean>
+    <bean 
+	    class = "com.spring.test.TesterBean" 
+	    init-method="initBean" >
+	    <constructor-arg value="santosh"></constructor-arg>
+    </bean>
 </beans>
 	
     <!-- Define your beans here -->
