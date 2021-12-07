@@ -8,5 +8,8 @@ public class AnnotationDemo {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 		Coach c = context.getBean("footballCoach", Coach.class);
 		System.out.println(((FootballCoach)c).getFortune());
+		final String[] test1 = {"A", "b"};
+		test1[1]= "sth else";
+		System.out.println(test1[1]);
 	}
 }
