@@ -7,6 +7,6 @@ public class AnnotationDemo {
 		// TODO Auto-generated method stub
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 		Coach c = context.getBean("footballCoach", Coach.class);
-		System.out.println(c.train());
+		System.out.println(((FootballCoach)c).getFortune());
 	}
 }
