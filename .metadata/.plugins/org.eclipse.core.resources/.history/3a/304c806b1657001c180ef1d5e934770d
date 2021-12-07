@@ -36,8 +36,6 @@
     id="cricketCoach" 
     class="com.spring.test.CricketCoach">
     	<property name="fortuneService" ref="fortuneService"></property>
-    	<property name="name" value="santosh"></property>
-    	<property name="team" value="santosh"></property>
     </bean>
 </beans>
 	

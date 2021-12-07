@@ -10,14 +10,6 @@ public class CricketCoach implements Coach {
 	public String name;
 	public String team;
 	
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setTeam(String team) {
-		this.team = team;
-	}
-
 	public CricketCoach() {}
 
 	public void setFortuneService(FortuneService fortuneService) {
