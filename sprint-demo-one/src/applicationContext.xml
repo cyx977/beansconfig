@@ -8,14 +8,16 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
-    
+    <bean id="fortuneService" class="com.spring.test.HappyFortuneService"></bean>
     <bean 
 	    id="trackCoach" 
 	    class="com.spring.test.TrackCoach">
+	    <constructor-arg ref="fortuneService"></constructor-arg>
     </bean>
     <bean 
     	id="baseballCoach"
     	class="com.spring.test.BaseballCoach">
+    	<constructor-arg ref="fortuneService"></constructor-arg>
     </bean>
     <bean 
 	    id="logger" 
@@ -29,6 +31,11 @@
 	    class = "com.spring.test.TesterBean" 
 	    init-method="initBean" >
 	    <constructor-arg value="santosh"></constructor-arg>
+    </bean>
+    <bean 
+    id="cricketCoach" 
+    class="com.spring.test.CricketCoach">
+    	<property name="fortuneService" ref="fortuneService"></property>
     </bean>
 </beans>
 	

@@ -1,0 +1,23 @@
+package com.spring.test;
+
+public class CricketCoach implements FortuneService {
+	
+	FortuneService fortuneService;
+	
+//	public void setFortuneService(FortuneService fortuneService) {
+//		this.fortuneService = fortuneService;
+//	}
+	
+	public CricketCoach() {}
+
+	public void setFortuneService(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
+
+	@Override
+	public String getFortune() {
+		// TODO Auto-generated method stub
+		return fortuneService.getFortune();
+	}
+
+}

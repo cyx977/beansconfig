@@ -5,8 +5,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MyApp {
 
 	public static void main(String[] args) {
-		getExercise(new BaseballCoach());
-		getExercise(new TrackCoach());
+//		getExercise(new BaseballCoach());
+//		getExercise(new TrackCoach());
 //		ClassPathXmlApplicationContext c = new ClassPathXmlApplicationContext("a.xml");
 	}
 	

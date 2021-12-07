@@ -1,0 +1,11 @@
+package com.spring.test;
+
+public class HappyFortuneService implements FortuneService {
+
+	@Override
+	public String getFortume() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

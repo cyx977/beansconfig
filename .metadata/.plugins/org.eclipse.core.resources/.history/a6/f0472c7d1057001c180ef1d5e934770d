@@ -1,0 +1,10 @@
+package com.spring.test;
+
+public class HappyFortuneService implements FortuneService {
+
+	@Override
+	public String getFortume() {
+		return "100% fortunate";
+	}
+
+}
