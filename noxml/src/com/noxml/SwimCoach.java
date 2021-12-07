@@ -8,6 +8,8 @@ public class SwimCoach implements Coach {
 		this.fortuneService = fortuneService;
 	}
 	
+	
+	
 
 	@Override
 	public String getWorkout() {
@@ -15,6 +17,7 @@ public class SwimCoach implements Coach {
 	}
 	
 	public String getFortune() {
+		System.out.println(fortuneService);
 		return fortuneService.getFortune();
 	}
 

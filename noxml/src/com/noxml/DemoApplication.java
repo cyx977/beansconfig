@@ -11,6 +11,9 @@ public class DemoApplication {
 		Coach s = context.getBean("swimCoach", Coach.class);
 		System.out.println(s.getWorkout());
 		System.out.println(((SwimCoach)s).getFortune());
+		
+		Coach t = context.getBean("swimCoach", Coach.class);
+		System.out.println(((SwimCoach)t).getFortune());
 		context.close();
 	}
 
