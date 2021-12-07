@@ -1,4 +1,7 @@
 package com.annotation;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,6 +20,17 @@ public class FootballCoach implements Coach {
 //	@Qualifier("happyFortuneService")
 	FortuneService fortuneService;
 	
+	@PostConstruct
+	@PreDestroy
+	private void Test() {
+		System.out.println("This is a freaking init-method test");
+	}
+	
+	
+	@PreDestroy
+	private void Test1() {
+		System.out.println("this is a freaking destroy-method");
+	}
 
 //	public FootballCoach(FortuneService fortuneService) {
 //		this.fortuneService = fortuneService;

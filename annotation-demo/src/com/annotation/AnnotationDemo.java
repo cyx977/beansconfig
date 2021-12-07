@@ -11,5 +11,6 @@ public class AnnotationDemo {
 		final String[] test1 = {"A", "b"};
 		test1[1]= "sth else";
 		System.out.println(test1[1]);
+		context.close();
 	}
 }
