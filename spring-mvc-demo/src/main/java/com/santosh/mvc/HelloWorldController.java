@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HelloWorldController {
 	@RequestMapping("/showForm")
-	public String showForm() {
+	public String showForm(Model model) {
+		model.addAttribute("root", "/spring-mvc-demo");
 		return "helloworld-form";
 	}
 	
@@ -20,9 +21,8 @@ public class HelloWorldController {
 	}
 	
 	@RequestMapping("/process2")
-	public String process2(HttpServletRequest request, Model model){
-		try {
-			String theName = request.getParameter("name");
+	public String process2(HttpServletRequest request, @RequestParam("name") String theName, Model model){
+		try {	
 			theName = theName.toUpperCase();
 			String result = "yo!" + theName;
 			model.addAttribute("message", result);

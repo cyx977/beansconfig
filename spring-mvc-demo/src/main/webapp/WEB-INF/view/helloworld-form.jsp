@@ -8,7 +8,7 @@
 
 </head>
 <body>
-	<a href="">Home</a>
+	<a href="${root}">Home</a>
 	<form action="process2">
 		<input name="name">
 		<input type="submit">

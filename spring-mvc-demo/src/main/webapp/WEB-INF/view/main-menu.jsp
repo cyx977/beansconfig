@@ -1,6 +1,7 @@
 <html>
 	<body>
+			<a href="showForm">Form</a>
 		<h2>Hellooooos</h2>
-		<a href="showForm">Form</a>
+		<script src="${pageContext.request.contextPath}/resources/test.js"></script>
 	</body>
 </html>
