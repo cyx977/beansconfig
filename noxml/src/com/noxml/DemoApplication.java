@@ -16,5 +16,4 @@ public class DemoApplication {
 		System.out.println(((SwimCoach)t).getFortune());
 		context.close();
 	}
-
 }
