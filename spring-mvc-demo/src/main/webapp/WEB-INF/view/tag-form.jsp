@@ -18,13 +18,14 @@
 		<form:input path="firstName" onchange="test"/>
 		<form:input path="lastName"/>
 		<form:select path="country">
-			<form:option value="nepal" label="npl"></form:option>
-			<form:option value="china" label="chn"></form:option>
+			<form:option value="taiwan" label="Taiwan"></form:option>
+			<form:options items="${countries}"></form:options>
 		</form:select>
 		<br><br>
 		Favourite Programming Language
 		<form:radiobutton path="progLang" value="dart" label="dart"/>
 		<form:radiobutton path="progLang" value="java" label="java"/>
+		<form:radiobuttons path="progLang" items="${favoriteLanguageOptions}"/>
 		<br><br>
 		Favourite Programming Language
 		<form:checkbox path="smartPhone" label="Xiaomi" value="mi"/>

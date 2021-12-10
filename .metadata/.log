@@ -8246,3 +8246,6 @@ Binding(ALT+SHIFT+D R,
 
 !ENTRY org.eclipse.ui.navigator 2 0 2021-12-08 15:18:32.679
 !MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.jst.server.core 4 0 2021-12-10 07:44:06.482
+!MESSAGE Could not launch in profiling mode because no profilers are configured.
