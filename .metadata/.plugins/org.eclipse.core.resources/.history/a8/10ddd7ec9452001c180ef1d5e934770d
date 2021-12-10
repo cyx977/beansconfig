@@ -1,7 +1,0 @@
-package com.spring.test;
-import java.util.logging.Logger;
-
-public class IocLogger {
-	private final static Logger LOGGER = Logger.getLogger(MyLogger.class.getName());
-	LOGGER.setLevel(Level.INFO);
-}
