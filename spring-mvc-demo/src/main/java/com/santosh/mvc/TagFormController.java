@@ -55,10 +55,10 @@ public class TagFormController {
 			model.addAttribute("countries", countryOptions);
 			model.addAttribute("student", theStudent);
 			model.addAttribute("favoriteLanguageOptions", favoriteLanguageOptions);
+			System.out.println(result);
 			return "tag-form";
 		}else {
 			return "tag-view";
 		}
-
 	}
 }
