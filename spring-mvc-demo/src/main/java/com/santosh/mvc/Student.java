@@ -13,6 +13,17 @@ public class Student {
 	public String progLang;
 	public String[] smartPhone;
 	
+	@NotNull(message = "required")
+	public int freePass;
+	
+
+
+	public int getFreePass() {
+		return freePass;
+	}
+	public void setFreePass(int freePass) {
+		this.freePass = freePass;
+	}
 	public String[] getSmartPhone() {
 		return smartPhone;
 	}

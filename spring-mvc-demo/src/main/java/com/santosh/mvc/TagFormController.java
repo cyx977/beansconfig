@@ -43,7 +43,6 @@ public class TagFormController {
 	}
 	
 	
-	
 	@RequestMapping("/processTagForm")
 	public String processTagForm(@Valid @ModelAttribute("student") Student theStudent, BindingResult result, Model model) {
 		System.out.println(theStudent.firstName+ " "+ theStudent.lastName+ " "+theStudent.country+ " "+theStudent.progLang);
