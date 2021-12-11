@@ -3,6 +3,8 @@ package com.santosh.mvc;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.santosh.mvc.validation.courseValidation.CourseCode;
+
 public class Student {
 	public String firstName;
 	
@@ -13,6 +15,15 @@ public class Student {
 	public String progLang;
 	public String[] smartPhone;
 	
+	@CourseCode(value = "BITT", message = "must start with BITT")
+	public String courseCode;
+	
+	public String getCourseCode() {
+		return courseCode;
+	}
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
 	@NotNull(message = "required")
 	public int freePass;
 	

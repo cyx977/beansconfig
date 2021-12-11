@@ -24,6 +24,8 @@
 		<br><br>
 		FreePass: <form:input path="freePass"/> <form:errors path="freePass" cssClass="error"></form:errors>
 		<br><br>
+		CourseCode: <form:input path="courseCode"/> <form:errors path="courseCode" cssClass="error"></form:errors>
+		<br><br>
 		<form:select path="country">
 			<form:option value="taiwan" label="Taiwan"></form:option>
 			<form:options items="${countries}"></form:options>
