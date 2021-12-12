@@ -1,14 +1,12 @@
 package com.hibtut.app;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.jibtut.hibernate.entity.Student;
-
-
-
-
 
 
 public class TestJdbc {
@@ -25,17 +23,21 @@ public class TestJdbc {
 			SessionFactory factory = new Configuration().configure("cfg.xml").addAnnotatedClass(Student.class).buildSessionFactory();
 //			Session session = factory.getCurrentSession();	
 			final Session session = factory.openSession();
-			Student s = new Student();
-			s.setName("whatisiasdfasdft");
+//			Student s = new Student();
+//			s.setName("whatisiasdfasdft");
 //			s.setId(2);
 			session.beginTransaction();
 //			int theId = (Integer) session.save(s);
-//			session.getTransaction().commit();
 //			System.out.println(theId);
-			Student s1 = session.get(Student.class, 1);
-			System.out.println(s1.getName());
-			Thread.sleep(1000*50);
-			System.out.println("done sleeping");
+//			Student s1 = session.get(Student.class, 1);
+//			System.out.println(s1.getName());
+//			Thread.sleep(1000*50);
+//			System.out.println("done sleeping");
+			List<Student> students = session.createQuery("from Student s where s.id='2'").getResultList();
+			for(Student s : students) {
+				System.out.println(s);
+			}
+			
 			session.getTransaction().commit();
 			factory.close();
 		}catch (Exception e) {
