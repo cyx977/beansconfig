@@ -25,6 +25,8 @@
 		<item key="create_unimplemented" value="true"/>
 	</section>
 	<section name="completion_proposal_size">
+		<item key="size.x" value="638"/>
+		<item key="size.y" value="244"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
@@ -84,6 +86,30 @@
 		<item key="DIALOG_Y_ORIGIN" value="42"/>
 		<item key="DIALOG_WIDTH" value="635"/>
 		<item key="DIALOG_HEIGHT" value="721"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+	<section name="NewAnnotationWizardPage">
+		<item key="add_documented" value="false"/>
+		<section name="AddRetention">
+			<item key="enabled" value="false"/>
+			<list key="selectedEnums">
+				<item value="CLASS"/>
+			</list>
+		</section>
+		<section name="AddTarget">
+			<item key="enabled" value="false"/>
+			<list key="selectedEnums">
+			</list>
+		</section>
+	</section>
+	<section name="OverrideMethodDialog">
+		<item key="showtypes" value="true"/>
+	</section>
+	<section name="DialogBounds_OverrideMethodDialog">
+		<item key="DIALOG_X_ORIGIN" value="642"/>
+		<item key="DIALOG_Y_ORIGIN" value="150"/>
+		<item key="DIALOG_WIDTH" value="642"/>
+		<item key="DIALOG_HEIGHT" value="559"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
 	</section>
 </section>
