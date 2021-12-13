@@ -48,6 +48,9 @@ public class TestJdbc {
 //			Student s = session.get(Student.class, theId);
 //			session.delete(s);
 			
+			//another way of deleting via generic update
+//			int theId = 2;
+//			session.createQuery("delete from Student where id='2'").executeUpdate();			
 			
 			
 			session.getTransaction().commit();
