@@ -22,7 +22,7 @@ public class HibernateMap {
 				.buildSessionFactory();
 		Session session = factory.getCurrentSession();	
 		try {
-			Instructor i = new Instructor();
+//			Instructor i = new Instructor();
 //			InstructorDetail id = new InstructorDetail();
 //			id.setHobby("random hobby");
 //			id.setYoutube_channel("some random url");
@@ -53,20 +53,37 @@ public class HibernateMap {
 			
 			//create course and link to instructor
 			Course course = new Course();
-			List<Course> courses = new ArrayList<Course>();
-			courses.add(course);
 			course.setTitle("hibernate");
 			course.setInstructor(instructor);
-			instructor.setCourses(courses);
 			
-//			session.save(instructor);
-			session.save(course);
+			Course course1 = new Course();
+			course1.setTitle("MVC");
+			course1.setInstructor(instructor);
+			instructor.addCourses(course);
+			instructor.addCourses(course1);
+			
+//			Instructor instructor = session.get(Instructor.class, 1);
+//			List<Course> courses = instructor.getCourses();
+//			for (Course c : courses) {
+//				System.out.println(c.getTitle());
+//			}
+					
+			session.save(instructor);
+//			session.save(course);
+			
+			
+			//add course
+//			Course course = new Course();
+//			course.setTitle("MVC");
+//			Instructor instructor = session.get(Instructor.class, 1);
+//			instructor.addCourses(course);
 			
 			session.getTransaction().commit();
 			
+			
 		} finally {
-			factory.close();
 			session.close();
+			factory.close();
 		}
 //		
 		

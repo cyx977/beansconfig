@@ -46,7 +46,7 @@ public class Course {
 		this.title = title;
 	}
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL, optional = false)
 	@JoinColumn(name = "instructor_id")
 	private Instructor instructor;
 	

@@ -1,5 +1,6 @@
 package com.hibmap.tables;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -32,6 +33,13 @@ public class Instructor {
 	
 	public List<Course> getCourses() {
 		return courses;
+	}
+	
+	public void addCourses(Course course) {
+		if(courses == null) {
+			courses = new ArrayList<Course>();
+		}
+		courses.add(course);		
 	}
 
 	public void setCourses(List<Course> courses) {
