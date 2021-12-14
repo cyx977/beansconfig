@@ -1,10 +1,13 @@
 package com.hibmap.tables;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
 public class InstructorDetail {
@@ -38,7 +41,27 @@ public class InstructorDetail {
 	@Column(name="youtube_channel")
 	private String youtube_channel;
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Instructor getInstructor() {
+		return instructor;
+	}
+
+	public void setInstructor(Instructor instructor) {
+		this.instructor = instructor;
+	}
+
 	@Column
 	private String hobby;
+	
+	@OneToOne(mappedBy = "instructor_detail", cascade = CascadeType.ALL)
+	private Instructor instructor;
+	
 
 }
