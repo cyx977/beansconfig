@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,6 +19,11 @@ import javax.persistence.Table;
 @Entity
 public class Course {
 	
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", title=" + title + ", instructor=" + instructor + ", reviews=" + reviews + "]";
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -30,8 +36,21 @@ public class Course {
 	@JoinColumn(name = "instructor_id")
 	private Instructor instructor;
 	
-	@OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+	
+	@OneToMany(mappedBy = "course", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Review> reviews;
+	
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
+	public void addReview(Review review) {
+		if(reviews == null) {
+			reviews = new ArrayList<Review>();
+		}
+		reviews.add(review);
+	}
 
 	public Instructor getInstructor() {
 		return instructor;
@@ -55,18 +74,5 @@ public class Course {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-	
-	
-
-	public List<Review> getReview() {
-		return reviews;
-	}
-
-	public void addReview(Review review) {
-		if(reviews == null) {
-			reviews = new ArrayList<Review>();
-		}
-		reviews.add(review);	
 	}
 }

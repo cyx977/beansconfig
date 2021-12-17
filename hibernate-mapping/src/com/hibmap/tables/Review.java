@@ -18,9 +18,24 @@ public class Review {
 	@Column
 	private String comment;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "course_id")
+	@ManyToOne(cascade = CascadeType.ALL, optional = false)
+	@JoinColumn(name = "c_id")
 	private Course course;
+	
+
+
+	@Override
+	public String toString() {
+		return "Review [id=" + id + ", comment=" + comment + ", course=" + course + "]";
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
 
 	public int getId() {
 		return id;
@@ -36,13 +51,5 @@ public class Review {
 
 	public void setComment(String comment) {
 		this.comment = comment;
-	}
-
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
 	}	
 }

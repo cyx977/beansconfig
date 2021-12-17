@@ -25,22 +25,19 @@ public class HibernateMap {
 		Session session = factory.getCurrentSession();	
 		
 		try {
-			session.beginTransaction();
-	
+//			session.beginTransaction();
 			
-			//add review
-			Course course = session.get(Course.class, 2);
-			Review review = new Review();
-			review.setComment("2.8 is out");
-			review.setCourse(course);
-			course.addReview(review);
+			
+
+			
+			
 			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			session.getTransaction().commit();
+//			session.getTransaction().commit();
 			session.close();
 			factory.close();
 		}
