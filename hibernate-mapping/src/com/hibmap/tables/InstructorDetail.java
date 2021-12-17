@@ -12,6 +12,20 @@ import javax.persistence.Table;
 @Entity
 public class InstructorDetail {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	private int id;
+	
+	@Column(name="youtube_channel")
+	private String youtube_channel;
+	
+	@Column
+	private String hobby;
+	
+	@OneToOne(mappedBy = "instructor_detail", cascade = CascadeType.ALL)
+	private Instructor instructor;
+	
 	public String getYoutube_channel() {
 		return youtube_channel;
 	}
@@ -32,14 +46,6 @@ public class InstructorDetail {
 	public void setHobby(String hobby) {
 		this.hobby = hobby;
 	}
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
-	private int id;
-	
-	@Column(name="youtube_channel")
-	private String youtube_channel;
 	
 	public int getId() {
 		return id;
@@ -56,12 +62,4 @@ public class InstructorDetail {
 	public void setInstructor(Instructor instructor) {
 		this.instructor = instructor;
 	}
-
-	@Column
-	private String hobby;
-	
-	@OneToOne(mappedBy = "instructor_detail", cascade = CascadeType.ALL)
-	private Instructor instructor;
-	
-
 }
