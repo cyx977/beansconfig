@@ -1,27 +1,28 @@
 package com.hibmap.tables;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
 public class Course {
 	
+
+
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", title=" + title + ", instructor=" + instructor + ", reviews=" + reviews + "]";
+		return "Course [id=" + id + ", title=" + title + ", instructor=" + instructor + "]";
 	}
 
 	@Id
@@ -32,25 +33,39 @@ public class Course {
 	@Column(unique = true)
 	private String title;
 	
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+
 	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST, CascadeType.REFRESH, }, optional = false)
 	@JoinColumn(name = "instructor_id")
 	private Instructor instructor;
 	
+	@ManyToMany(mappedBy = "courses")
+	private List<Student> students;
 	
-	@OneToMany(mappedBy = "course", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<Review> reviews;
+	
+	
+	
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	@JoinColumn(name = "course_id")
+//	private List<Review> reviews;
 	
 
-	public List<Review> getReviews() {
-		return reviews;
-	}
-
-	public void addReview(Review review) {
-		if(reviews == null) {
-			reviews = new ArrayList<Review>();
-		}
-		reviews.add(review);
-	}
+//	public List<Review> getReviews() {
+//		return reviews;
+//	}
+//
+//	public void addReview(Review review) {
+//		if(reviews == null) {
+//			reviews = new ArrayList<Review>();
+//		}
+//		reviews.add(review);
+//	}
 
 	public Instructor getInstructor() {
 		return instructor;

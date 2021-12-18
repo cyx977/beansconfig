@@ -8,6 +8,7 @@ import com.hibmap.tables.Course;
 import com.hibmap.tables.Instructor;
 import com.hibmap.tables.InstructorDetail;
 import com.hibmap.tables.Review;
+import com.hibmap.tables.Student;
 
 public class CreateReview {
 
@@ -17,6 +18,7 @@ public class CreateReview {
 				.addAnnotatedClass(InstructorDetail.class)
 				.addAnnotatedClass(Course.class)
 				.addAnnotatedClass(Review.class)
+				.addAnnotatedClass(Student.class)
 				.buildSessionFactory();
 		Session session = factory.getCurrentSession();	
 		
@@ -30,9 +32,9 @@ public class CreateReview {
 			//add review
 			Course course = session.get(Course.class, 1);
 			Review review = new Review();
-			review.setCourse(course);
+//			review.setCourse(course);
 			review.setComment("mind blowingich");
-			course.addReview(review);
+//			course.addReview(review);
 	
 			//modify Review
 //			Course course = session.get(Course.class, 2);

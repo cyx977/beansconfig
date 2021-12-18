@@ -8,6 +8,7 @@ import com.hibmap.tables.Course;
 import com.hibmap.tables.Instructor;
 import com.hibmap.tables.InstructorDetail;
 import com.hibmap.tables.Review;
+import com.hibmap.tables.Student;
 
 public class CreateInstructorInstructor_detailCourse {
 
@@ -17,6 +18,7 @@ public class CreateInstructorInstructor_detailCourse {
 				.addAnnotatedClass(InstructorDetail.class)
 				.addAnnotatedClass(Course.class)
 				.addAnnotatedClass(Review.class)
+				.addAnnotatedClass(Student.class)
 				.buildSessionFactory();
 		Session session = factory.getCurrentSession();	
 		

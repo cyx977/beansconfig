@@ -1,7 +1,5 @@
 package com.hibmap.app;
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,6 +8,7 @@ import com.hibmap.tables.Course;
 import com.hibmap.tables.Instructor;
 import com.hibmap.tables.InstructorDetail;
 import com.hibmap.tables.Review;
+import com.hibmap.tables.Student;
 
 public class GetCourse {
 
@@ -19,6 +18,7 @@ public class GetCourse {
 				.addAnnotatedClass(InstructorDetail.class)
 				.addAnnotatedClass(Course.class)
 				.addAnnotatedClass(Review.class)
+				.addAnnotatedClass(Student.class)
 				.buildSessionFactory();
 		Session session = factory.getCurrentSession();	
 		
@@ -27,7 +27,7 @@ public class GetCourse {
 			
 			//get Courses
 			Course course = session.get(Course.class, 1);
-			System.out.println(course.getReviews().get(0).getCourse().getTitle());
+//			System.out.println(course.getReviews().get(0));
 			
 //			InstructorDetail detail = new InstructorDetail();
 //			detail.setHobby("basketball");

@@ -1,6 +1,5 @@
 package com.hibmap.tables;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,23 +17,14 @@ public class Review {
 	@Column
 	private String comment;
 	
-	@ManyToOne(cascade = CascadeType.ALL, optional = false)
-	@JoinColumn(name = "c_id")
+	@ManyToOne
+	@JoinColumn(name = "something")
 	private Course course;
-	
 
 
 	@Override
 	public String toString() {
-		return "Review [id=" + id + ", comment=" + comment + ", course=" + course + "]";
-	}
-
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
+		return "Review [id=" + id + ", comment=" + comment + "]";
 	}
 
 	public int getId() {
