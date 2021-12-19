@@ -19,13 +19,14 @@ import com.db_mvc.entity.Customer;
 @Qualifier("first")
 public class CustomerDaoImpl implements CustomerDAO {
 	@Autowired
-	private SessionFactory sessionFactory;
+	@Qualifier("sessionFactory")
+	private SessionFactory abcSessionFactory;
 	
 	
 	@Override
-	@Transactional
 	public List<Customer> getCustomers() {
-		Session currentSession = sessionFactory.getCurrentSession();
+		System.out.println("using first as dependency");
+		Session currentSession = abcSessionFactory.getCurrentSession();
 		Query<Customer> query = currentSession.createQuery("from Customer", Customer.class);
 		List<Customer> customers = query.getResultList();
 		return customers;

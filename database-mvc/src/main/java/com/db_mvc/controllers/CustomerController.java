@@ -25,7 +25,8 @@ public class CustomerController {
 	public String sth(Model model) {
 		
 		List<Customer> customers = customerService.getCustomers();
-		model.addAttribute("customer", customers);
+		System.out.println(customers.isEmpty());
+		model.addAttribute("customers", customers);
 		return "customer";
 	}
 }

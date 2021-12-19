@@ -23,8 +23,8 @@ public class CustomerDaoImpl2 implements CustomerDAO {
 	
 	
 	@Override
-	@Transactional
 	public List<Customer> getCustomers() {
+		System.out.println("using second as dependency");
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query<Customer> query = currentSession.createQuery("from Customer", Customer.class);
 		List<Customer> customers = query.getResultList();
