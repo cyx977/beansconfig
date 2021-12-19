@@ -11,29 +11,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.db_mvc.dao.CustomerDAO;
 import com.db_mvc.entity.Customer;
+import com.db_mvc.service.CustomerService;
 
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
 	
-	
-	CustomerDAO customerDAO;
-	
-	@Autowired // inject FirstServiceImpl
-    public CustomerController(@Qualifier("first") CustomerDAO myService) {
-        this.customerDAO = myService;
-    }
+	@Autowired
+	private CustomerService customerService;
 
 	
 	@RequestMapping("/list")
-	public String sth(Model model, @RequestParam(name = "id") int id) {
+	public String sth(Model model) {
 		
-		List<Customer> customers = customerDAO.getCustomers();
-		for(Customer c : customers) {			
-			System.out.println(c.getFirstName());
-		}
-		System.out.println(id);
-		model.addAttribute("custom", "25");
+		List<Customer> customers = customerService.getCustomers();
+		model.addAttribute("customer", customers);
 		return "customer";
 	}
 }
