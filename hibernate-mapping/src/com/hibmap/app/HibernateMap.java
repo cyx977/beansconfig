@@ -22,6 +22,7 @@ import com.hibmap.tables.Student;
 public class HibernateMap {
 
 	public static void main(String[] args) {
+		
 		SessionFactory factory = new Configuration().configure("cfg.xml")
 				.addAnnotatedClass(Instructor.class)
 				.addAnnotatedClass(InstructorDetail.class)
@@ -31,32 +32,18 @@ public class HibernateMap {
 				.buildSessionFactory();
 		Session session = factory.getCurrentSession();	
 		
-		session.beginTransaction();
-		
-		
-		session.getTransaction().commit();
-		session.close();
-		
-		
-		
-//		try {
-//			session.beginTransaction();
-//			
-//			
-//
-//			
-//			
-//			
-//			
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} finally {
-//			session.getTransaction().commit();
-//			session.close();
-//			factory.close();
-//		}
-//		
+		try {
+			session.beginTransaction();
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			session.getTransaction().commit();
+			session.close();
+			factory.close();
+		}
 		
 	}
 
