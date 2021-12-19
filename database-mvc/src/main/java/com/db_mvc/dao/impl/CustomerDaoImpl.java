@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.db_mvc.dao.CustomerDAO;
@@ -15,6 +16,7 @@ import com.db_mvc.entity.Customer;
 
 
 @Repository
+@Qualifier("first")
 public class CustomerDaoImpl implements CustomerDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
